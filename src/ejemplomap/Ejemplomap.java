@@ -11,6 +11,8 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.TreeMap;
+import javax.swing.JOptionPane;
+import modelo.FileXML;
 import modelo.Persona;
 
 /**
@@ -29,10 +31,10 @@ public class Ejemplomap {
         
         HashMap<Integer, LinkedList<Persona>> map1 = 
                 new HashMap<>();
-        LinkedHashMap<Integer, LinkedList<Persona>> map2 = 
-                new LinkedHashMap<>();
-        TreeMap<Integer, LinkedList<Persona>> map3 = 
-                new TreeMap<>();
+////        LinkedHashMap<Integer, LinkedList<Persona>> map2 = 
+////                new LinkedHashMap<>();
+////        TreeMap<Integer, LinkedList<Persona>> map3 = 
+////                new TreeMap<>();
 
         litap.add(new Persona("David", "1130", 31));
         litap.add(new Persona("Sofia", "1131", 30));
@@ -57,7 +59,13 @@ public class Ejemplomap {
 //        System.out.println(m2);
 //        System.out.println("_______");
 //        System.out.println(m3);
-        
+
+        boolean t= FileXML.crearArchivoXML(map1);
+        if(t){
+            JOptionPane.showMessageDialog(null, "Archivo Guardado con Exito");
+        }else{
+            JOptionPane.showMessageDialog(null, "Error al guardar archivo");
+        }
         
     }
 
