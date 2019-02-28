@@ -60,12 +60,18 @@ public class Ejemplomap {
 //        System.out.println("_______");
 //        System.out.println(m3);
 
-        boolean t= FileXML.crearArchivoXML(map1);
-        if(t){
-            JOptionPane.showMessageDialog(null, "Archivo Guardado con Exito");
-        }else{
-            JOptionPane.showMessageDialog(null, "Error al guardar archivo");
-        }
+//        boolean t= FileXML.crearArchivoXML(map1);
+//        if(t){
+//            JOptionPane.showMessageDialog(null, "Archivo Guardado con Exito");
+//        }else{
+//            JOptionPane.showMessageDialog(null, "Error al guardar archivo");
+//        }
+        
+        Map<Integer, LinkedList<Persona>> m=FileXML.leerXML();
+        String m4=mostrar(m);
+        System.out.println("Leido");
+        System.out.println(m4);
+        System.out.println("_______");
         
     }
 
